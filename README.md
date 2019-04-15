@@ -128,7 +128,7 @@
         2. 修改net.ipv4.ip_forward=1后保存并关闭文件    
         3. 使用以下指令刷新sysctl：`sysctl -p`
         4. 如执行后正常回显则表示生效。如显示错误信息，请重新打开/etc/syctl并根据错误信息对应部分用#号注释，保存后再刷新sysctl直至不会报错为止。
-    - 当iptables和strongswan都正常时，如果仍然没办法访问网络，则使用iptales实现包过虑型防火墙，`iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
+    - 当iptables和strongswan都正常时，如果仍然没办法访问网络，则使用iptables实现包过虑型防火墙，`iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
 
 * 如果之前使用的自签名证书，后改用SSL证书，部分客户端可能需要卸载之前安装的自签名证书,否则可能会报`Ike凭证不可接受`的错误:
     * iOS：设置-通用，删除证书对应的描述文件即可；
